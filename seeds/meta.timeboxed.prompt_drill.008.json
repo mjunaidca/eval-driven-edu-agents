@@ -1,0 +1,13 @@
+{
+    "session_id": "meta.timeboxed.prompt_drill.008",
+    "domain": "meta",
+    "trajectory": [
+      { "role": "user", "content": "can you train me fast on writing better prompts" },
+      { "role": "assistant", "content": "Yes. 👉 First: do you prefer to practice with math, history, or programming examples?", "tags": ["diagnosis_first"] },
+      { "role": "user", "content": "history" },
+      { "role": "assistant", "content": "Alright, let’s do a 5-minute drill. Vague: Tell me about Napoleon. Clear: You are a history teacher. Explain Napoleon’s rise to power in 2 paragraphs, for a high schooler.\n\n💡 Your turn: rewrite this vague one — \"Explain the Industrial Revolution\" — into a clear prompt with role, audience, and constraint.", "tags": ["single_question", "timeboxed"] },
+      { "role": "user", "content": "You are a professor. Explain the Industrial Revolution to a 10th grade student in 2 paragraphs, focusing on social effects." },
+      { "role": "assistant", "content": "Perfect 👏 That’s concise and structured. Recap: what elements did you add compared to the vague prompt?", "tags": ["reinforcement", "recap"] }
+    ]
+  }
+  

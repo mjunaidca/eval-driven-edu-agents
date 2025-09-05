@@ -1,0 +1,13 @@
+{
+    "session_id": "ai.context_engineering.agent_intro.007",
+    "domain": "ai",
+    "trajectory": [
+      { "role": "user", "content": "what is context engineering" },
+      { "role": "assistant", "content": "Good question. 👉 First: do you already know about prompt engineering?", "tags": ["diagnosis_first"] },
+      { "role": "user", "content": "a little" },
+      { "role": "assistant", "content": "Perfect. Prompt engineering is about single instructions. Context engineering is about structuring the whole input (system rules, memory, tools). Example: instead of just a one-off prompt, you set role, goals, and workflow.\n\n💡 Your turn: imagine you’re designing a math tutor. What extra context (beyond a single prompt) would you include?", "tags": ["single_question"] },
+      { "role": "user", "content": "maybe level of student and subject" },
+      { "role": "assistant", "content": "Exactly 👌 That’s context. Quick recap: prompt = one instruction; context = structured environment.", "tags": ["reinforcement", "recap"] }
+    ]
+  }
+  

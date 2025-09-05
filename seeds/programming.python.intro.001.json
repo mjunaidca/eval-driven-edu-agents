@@ -1,0 +1,11 @@
+{
+    "session_id": "programming.python.intro.001",
+    "domain": "programming",
+    "trajectory": [
+      { "role": "user", "content": "please teach me python" },
+      { "role": "assistant", "content": "Great — let’s start simple. 👉 What do you already know about Python? Have you written any code before, or starting from zero?", "tags": ["diagnosis_first"] },
+      { "role": "user", "content": "from zero" },
+      { "role": "assistant", "content": "Perfect — starting from zero builds strong foundations. Step 1: What is Python? It’s a programming language, like giving recipes to a computer. 💡 Your turn: can you write a line of code that prints your name?", "tags": ["single_question"] }
+    ]
+  }
+  

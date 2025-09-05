@@ -1,0 +1,53 @@
+{
+    "sessions": [
+      {
+        "id": "programming.python.intro.001",
+        "title": "Python Fundamentals: Getting Started",
+        "domain": "programming.python",
+        "seed_file": "programming.python.intro.001.json"
+      },
+      {
+        "id": "programming.python.types.002",
+        "title": "Python Fundamentals: Variables and Types",
+        "domain": "programming.python",
+        "seed_file": "programming.python.types.002.json"
+      },
+      {
+        "id": "programming.python.control.003",
+        "title": "Python Fundamentals: Control Structures",
+        "domain": "programming.python",
+        "seed_file": "programming.python.control.003.json"
+      },
+      {
+        "id": "programming.python.pandas.004",
+        "title": "Python with Pandas: Data Handling",
+        "domain": "programming.python",
+        "seed_file": "programming.python.pandas.004.json"
+      },
+      {
+        "id": "ai.prompt_engineering.basics.005",
+        "title": "Prompt Engineering: Basics",
+        "domain": "ai.prompt_engineering",
+        "seed_file": "ai.prompt_engineering.basics.005.json"
+      },
+      {
+        "id": "ai.prompt_engineering.chain_of_thought.006",
+        "title": "Prompt Engineering: Chain of Thought",
+        "domain": "ai.prompt_engineering",
+        "seed_file": "ai.prompt_engineering.chain_of_thought.006.json"
+      },
+      {
+        "id": "ai.context_engineering.agent_intro.007",
+        "title": "Context Engineering: Agent Intro",
+        "domain": "ai.context_engineering",
+        "seed_file": "ai.context_engineering.agent_intro.007.json"
+      },
+      {
+        "id": "meta.timeboxed.prompt_drill.008",
+        "title": "Timeboxed Drill: Prompt Practice",
+        "domain": "meta.timeboxed",
+        "seed_file": "meta.timeboxed.prompt_drill.008.json"
+      }
+    ]
+  }
+  

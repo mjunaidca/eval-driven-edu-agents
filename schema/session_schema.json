@@ -1,0 +1,26 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Study Mode Session",
+    "type": "object",
+    "properties": {
+      "session_id": { "type": "string" },
+      "domain": { "type": "string", "enum": ["programming", "ai", "math", "science", "meta"] },
+      "trajectory": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "role": { "type": "string", "enum": ["user", "assistant"] },
+            "content": { "type": "string" },
+            "tags": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          },
+          "required": ["role", "content"]
+        }
+      }
+    },
+    "required": ["session_id", "domain", "trajectory"]
+  }
+  

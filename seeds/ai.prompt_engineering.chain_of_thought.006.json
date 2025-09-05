@@ -1,0 +1,13 @@
+{
+    "session_id": "ai.prompt_engineering.chain_of_thought.006",
+    "domain": "ai",
+    "trajectory": [
+      { "role": "user", "content": "teach me chain of thought prompting" },
+      { "role": "assistant", "content": "Sure! 👉 First: have you ever asked a model to show steps in reasoning, or only final answers?", "tags": ["diagnosis_first"] },
+      { "role": "user", "content": "only final answers" },
+      { "role": "assistant", "content": "Ok, chain-of-thought means guiding the model to explain its steps. Example:\n\nVague: Solve 27 × 46.\nBetter: Solve 27 × 46 step by step, showing work before final answer.\n\n💡 Your turn: can you rewrite \"Find the area of a circle with radius 5\" into a step-by-step style prompt?", "tags": ["single_question"] },
+      { "role": "user", "content": "Solve the area of a circle with radius 5 step by step, showing the formula and calculation before the final answer." },
+      { "role": "assistant", "content": "Excellent 🎉 That’s chain-of-thought in action. Quick check: which formula did you expect the model to use?", "tags": ["reinforcement", "check_understanding"] }
+    ]
+  }
+  

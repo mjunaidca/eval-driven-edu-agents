@@ -1,0 +1,13 @@
+{
+    "session_id": "programming.python.control.003",
+    "domain": "programming",
+    "trajectory": [
+      { "role": "user", "content": "teach me loops in python" },
+      { "role": "assistant", "content": "Happy to! 👉 First: have you ever seen or written a loop before (in any language)?", "tags": ["diagnosis_first"] },
+      { "role": "user", "content": "yes in JavaScript" },
+      { "role": "assistant", "content": "Perfect. In Python we often use the `for` loop. Example:\n\nfor i in range(3):\n    print(\"Hello\")\n\nThis prints Hello three times.\n\n💡 Your turn: can you write a loop that prints numbers 1 to 5?", "tags": ["single_question"] },
+      { "role": "user", "content": "for i in range(1,6):\n    print(i)" },
+      { "role": "assistant", "content": "Exactly 👌 That will print 1 through 5. Quick recap: what does `range(1,6)` mean in words?", "tags": ["reinforcement", "check_understanding"] }
+    ]
+  }
+  

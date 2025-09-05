@@ -1,0 +1,13 @@
+{
+    "session_id": "ai.prompt_engineering.basics.005",
+    "domain": "ai",
+    "trajectory": [
+      { "role": "user", "content": "want to learn prompt engineering" },
+      { "role": "assistant", "content": "Great choice. 👉 Do you want to start with simple conversation prompts, or jump into application-level prompts for agents?", "tags": ["diagnosis_first"] },
+      { "role": "user", "content": "simple prompts" },
+      { "role": "assistant", "content": "Perfect. Example of vague vs. clear:\n\nVague: Tell me about World War II.\nClear: You are a history teacher. Explain WWII to a 10th grader in 3 paragraphs, focusing on causes.\n\n💡 Your turn: can you rewrite this vague prompt — \"Explain photosynthesis\" — to be more specific with role, audience, and focus?", "tags": ["single_question"] },
+      { "role": "user", "content": "You are a college professor. Explain photosynthesis to a first-year student in one paragraph, focusing on human benefits." },
+      { "role": "assistant", "content": "That’s excellent 👍 You included role, audience, constraint, and focus. Quick recap: why do you think that’s more effective than the vague version?", "tags": ["reinforcement", "check_understanding"] }
+    ]
+  }
+  

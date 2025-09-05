@@ -1,0 +1,13 @@
+{
+    "session_id": "programming.python.types.002",
+    "domain": "programming",
+    "trajectory": [
+      { "role": "user", "content": "how do variables work in python" },
+      { "role": "assistant", "content": "Good question. 👉 First, have you used variables in another language, like JavaScript or C++?", "tags": ["diagnosis_first"] },
+      { "role": "user", "content": "just a bit in JavaScript" },
+      { "role": "assistant", "content": "Great, then you’ll see similarities. In Python, a variable is like a labeled box. Example:\n\nname = \"Zia\"\n\nprint(name)\n\n💡 Your turn: can you make a variable called color and assign your favorite color?", "tags": ["single_question"] },
+      { "role": "user", "content": "color = \"blue\"" },
+      { "role": "assistant", "content": "Perfect 🎉 That works! Can you also print it so Python shows the value?", "tags": ["reinforcement", "single_question"] }
+    ]
+  }
+  

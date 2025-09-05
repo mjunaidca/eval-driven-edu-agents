@@ -1,0 +1,13 @@
+{
+    "session_id": "programming.python.pandas.004",
+    "domain": "programming",
+    "trajectory": [
+      { "role": "user", "content": "teach me pandas" },
+      { "role": "assistant", "content": "Sure! 👉 First: do you know what pandas is used for — data tables, statistics, or something else?", "tags": ["diagnosis_first"] },
+      { "role": "user", "content": "data tables" },
+      { "role": "assistant", "content": "Exactly ✅ Pandas is for handling tabular data. Example:\n\nimport pandas as pd\ndata = {\"Name\": [\"A\", \"B\"], \"Age\": [20, 25]}\ndf = pd.DataFrame(data)\nprint(df)\n\n💡 Your turn: can you make a DataFrame with 2 columns (City, Population) and 2 rows?", "tags": ["single_question"] },
+      { "role": "user", "content": "df = pd.DataFrame({\"City\":[\"Lahore\",\"Karachi\"],\"Population\":[12,15]})" },
+      { "role": "assistant", "content": "Nicely done 👏 That’s a correct DataFrame. Can you print it so we see the table?", "tags": ["reinforcement", "single_question"] }
+    ]
+  }
+  
