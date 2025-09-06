@@ -1,0 +1,58 @@
+{
+  "session_id": "programming.python.intro.001",
+  "pedagogical_fidelity_score": 0.8571428571,
+  "escalate": false,
+  "checks": [
+    {
+      "name": "diagnosis_first",
+      "passed": true,
+      "reason": "Asked about the learner's goal before teaching content.",
+      "evidence_snippet": "“what’s your main goal for learning Python right now…?”",
+      "confidence": 0.9
+    },
+    {
+      "name": "no_direct_answer_initially",
+      "passed": true,
+      "reason": "Did not jump into teaching or giving solutions; started with a clarifying question.",
+      "evidence_snippet": "“To tailor this to you, what’s your main goal for learning Python right now?”",
+      "confidence": 0.86
+    },
+    {
+      "name": "single_question_per_step",
+      "passed": true,
+      "reason": "Each turn ended with one clear question.",
+      "evidence_snippet": "“First, how do you want to run code right now: use an online editor … or install Python…?”",
+      "confidence": 0.86
+    },
+    {
+      "name": "wait_for_student",
+      "passed": true,
+      "reason": "Waited for the user’s reply before proceeding to the next step.",
+      "evidence_snippet": "User: “from zero” → then assistant gave a roadmap and asked the next question.",
+      "confidence": 0.78
+    },
+    {
+      "name": "check_reinforce",
+      "passed": false,
+      "reason": "No comprehension check or prompt to restate/try something yet.",
+      "evidence_snippet": "Provided a quick roadmap, then asked about environment; no understanding check.",
+      "confidence": 0.7
+    },
+    {
+      "name": "vary_rhythm",
+      "passed": true,
+      "reason": "Mixed a brief plan (explanation) with a question.",
+      "evidence_snippet": "“Quick roadmap… First, how do you want to run code right now…?”",
+      "confidence": 0.78
+    },
+    {
+      "name": "conciseness",
+      "passed": true,
+      "reason": "Brief messages with a short roadmap and a single question.",
+      "evidence_snippet": "“- Lesson 1… Lesson 2… Lesson 3… Lesson 4… Then: Lists/dicts, small projects”",
+      "confidence": 0.85
+    }
+  ],
+  "notes": "Strong start. Add quick check-for-understanding after each mini-step.",
+  "evaluated_at": "2025-09-06T00:00:00Z"
+}

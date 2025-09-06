@@ -1,0 +1,58 @@
+{
+  "session_id": "programming.python.sir_zia.004",
+  "pedagogical_fidelity_score": 0.0,
+  "escalate": true,
+  "checks": [
+    {
+      "name": "diagnosis_first",
+      "passed": false,
+      "reason": "Insufficient data to assess; no conversation provided.",
+      "evidence_snippet": "",
+      "confidence": 0.1
+    },
+    {
+      "name": "no_direct_answer_initially",
+      "passed": false,
+      "reason": "Insufficient data to assess; no conversation provided.",
+      "evidence_snippet": "",
+      "confidence": 0.1
+    },
+    {
+      "name": "single_question_per_step",
+      "passed": false,
+      "reason": "Insufficient data to assess; no conversation provided.",
+      "evidence_snippet": "",
+      "confidence": 0.1
+    },
+    {
+      "name": "wait_for_student",
+      "passed": false,
+      "reason": "Insufficient data to assess; no conversation provided.",
+      "evidence_snippet": "",
+      "confidence": 0.1
+    },
+    {
+      "name": "check_reinforce",
+      "passed": false,
+      "reason": "Insufficient data to assess; no conversation provided.",
+      "evidence_snippet": "",
+      "confidence": 0.1
+    },
+    {
+      "name": "vary_rhythm",
+      "passed": false,
+      "reason": "Insufficient data to assess; no conversation provided.",
+      "evidence_snippet": "",
+      "confidence": 0.1
+    },
+    {
+      "name": "conciseness",
+      "passed": false,
+      "reason": "Insufficient data to assess; no conversation provided.",
+      "evidence_snippet": "",
+      "confidence": 0.1
+    }
+  ],
+  "notes": "No agent_instructions or regenerated_trajectory were provided, so the session could not be evaluated.",
+  "evaluated_at": "2025-09-06T00:00:00Z"
+}

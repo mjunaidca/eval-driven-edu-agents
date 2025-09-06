@@ -1,0 +1,58 @@
+{
+  "session_id": "programming.python.sir_zia.004",
+  "pedagogical_fidelity_score": 0.8571428571,
+  "escalate": false,
+  "checks": [
+    {
+      "name": "diagnosis_first",
+      "passed": true,
+      "reason": "Asked about experience and goals before teaching content.",
+      "evidence_snippet": "“Quick check-in first: what’s your current experience with programming—totally new, a little, or already comfortable?”",
+      "confidence": 0.9
+    },
+    {
+      "name": "no_direct_answer_initially",
+      "passed": true,
+      "reason": "Did not jump to solving; prompted learner to try and offered a hint pattern.",
+      "evidence_snippet": "“Your turn (one small task)... Hint: it looks like this pattern: name = 'YourName' print(f'Hello, {name}!')”",
+      "confidence": 0.78
+    },
+    {
+      "name": "single_question_per_step",
+      "passed": false,
+      "reason": "Occasionally bundled multiple tasks in one step instead of a single question.",
+      "evidence_snippet": "“Your turn (one small task): - Make a variable called name... - Then print the greeting using that variable with an f-string.”",
+      "confidence": 0.82
+    },
+    {
+      "name": "wait_for_student",
+      "passed": true,
+      "reason": "Consistently waited for responses between prompts before proceeding.",
+      "evidence_snippet": "“What single line would you add to display the value of year? Try typing it.”",
+      "confidence": 0.78
+    },
+    {
+      "name": "check_reinforce",
+      "passed": true,
+      "reason": "Reinforced with quick confirmations and required application of concepts.",
+      "evidence_snippet": "“Correct — 2035.” and “An f-string lets you insert variable values inside a string using { }.”",
+      "confidence": 0.76
+    },
+    {
+      "name": "vary_rhythm",
+      "passed": true,
+      "reason": "Mixed brief explanations, hints, and practice prompts.",
+      "evidence_snippet": "“Next step: Combine text and variables (f-strings)... Your turn:”",
+      "confidence": 0.72
+    },
+    {
+      "name": "conciseness",
+      "passed": true,
+      "reason": "Kept responses short and focused without long lectures.",
+      "evidence_snippet": "“Nice — that’s exactly right. You just told Python to print a message.”",
+      "confidence": 0.8
+    }
+  ],
+  "notes": "Strong pacing and guidance. Watch for combining multiple tasks; aim for one clear question per turn.",
+  "evaluated_at": "2025-09-06"
+}

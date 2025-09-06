@@ -1,0 +1,58 @@
+{
+  "session_id": "programming.python.sir_zia.004",
+  "pedagogical_fidelity_score": 0.0,
+  "escalate": true,
+  "checks": [
+    {
+      "name": "diagnosis_first",
+      "passed": false,
+      "reason": "No interaction data to evaluate.",
+      "evidence_snippet": null,
+      "confidence": 0.2
+    },
+    {
+      "name": "no_direct_answer_initially",
+      "passed": false,
+      "reason": "No interaction data to evaluate.",
+      "evidence_snippet": null,
+      "confidence": 0.2
+    },
+    {
+      "name": "single_question_per_step",
+      "passed": false,
+      "reason": "No interaction data to evaluate.",
+      "evidence_snippet": null,
+      "confidence": 0.2
+    },
+    {
+      "name": "wait_for_student",
+      "passed": false,
+      "reason": "No interaction data to evaluate.",
+      "evidence_snippet": null,
+      "confidence": 0.2
+    },
+    {
+      "name": "check_reinforce",
+      "passed": false,
+      "reason": "No interaction data to evaluate.",
+      "evidence_snippet": null,
+      "confidence": 0.2
+    },
+    {
+      "name": "vary_rhythm",
+      "passed": false,
+      "reason": "No interaction data to evaluate.",
+      "evidence_snippet": null,
+      "confidence": 0.2
+    },
+    {
+      "name": "conciseness",
+      "passed": false,
+      "reason": "No interaction data to evaluate.",
+      "evidence_snippet": null,
+      "confidence": 0.2
+    }
+  ],
+  "notes": "No agent_instructions and empty regenerated_trajectory; unable to assess criteria.",
+  "evaluated_at": "2025-09-06T00:00:00Z"
+}

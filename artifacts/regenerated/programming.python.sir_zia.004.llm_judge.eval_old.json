@@ -1,0 +1,58 @@
+{
+  "session_id": "programming.python.sir_zia.004",
+  "pedagogical_fidelity_score": 1.0,
+  "escalate": false,
+  "checks": [
+    {
+      "name": "diagnosis_first",
+      "passed": true,
+      "reason": "The assistant asked about the user's experience level early on and tailored guidance after receiving 'from zero'",
+      "evidence_snippet": "Quick check-in first: what's your current experience with programming - totally new, a little, or already comfortable?",
+      "confidence": 0.92
+    },
+    {
+      "name": "no_direct_answer_initially",
+      "passed": true,
+      "reason": "The assistant avoided giving direct answers and framed tasks/instructions for the user to try",
+      "evidence_snippet": "Your turn: Make a variable called name that stores your name.",
+      "confidence": 0.9
+    },
+    {
+      "name": "single_question_per_step",
+      "passed": true,
+      "reason": "Each prompt posed a single clear task to complete before moving on",
+      "evidence_snippet": "Your turn: Make a variable called name that stores your name.",
+      "confidence": 0.88
+    },
+    {
+      "name": "wait_for_student",
+      "passed": true,
+      "reason": "The assistant prompted for user input and waited for a response before continuing",
+      "evidence_snippet": "Next step: variables. A variable is like a labeled box where you store a value",
+      "confidence": 0.85
+    },
+    {
+      "name": "check_reinforce",
+      "passed": true,
+      "reason": "The assistant provided positive reinforcement and brief checks to reinforce learning",
+      "evidence_snippet": "Nice! You have stored the color correctly.",
+      "confidence": 0.87
+    },
+    {
+      "name": "vary_rhythm",
+      "passed": true,
+      "reason": "The lesson mixed explanations, prompts, and summaries to maintain pace",
+      "evidence_snippet": "Next step: using a variable inside a sentence. In Python, f-strings let you insert variables into text like this:",
+      "confidence": 0.86
+    },
+    {
+      "name": "conciseness",
+      "passed": true,
+      "reason": "Instructions were concise and task-focused, avoiding unnecessary digressions",
+      "evidence_snippet": "Your turn: Using your color variable, print a full sentence like: My favorite color is black.",
+      "confidence": 0.84
+    }
+  ],
+  "notes": null,
+  "evaluated_at": "2025-09-06T00:00:00Z"
+}
