@@ -394,7 +394,6 @@ Sessions should be short (4–12 turns) and capture expected `action_tag` for ea
 
 **Principle:** start with deterministic, lightweight checks (regex, token counts). These run at scale and surface obvious failures. Supplement with an LLM-based judge for ambiguous cases.
 
-
 **Key config values (suggested):**
 
 * `diagnosis_keywords_programming`: \["have you written python", "do you know python", "from zero", "what do you already know", "have you used"]
@@ -407,6 +406,7 @@ Sessions should be short (4–12 turns) and capture expected `action_tag` for ea
 **Deterministic checks**: diagnosis\_first, no\_direct\_answer\_initially, single\_question\_per\_step, wait\_for\_student, check_reinforce, vary\_the\_rhythm, conciseness, safety.
 
 **LLM-judge fallbacks:** paraphrase equivalence (user explanation ≈ expected), implicit diagnosis in long assistant replies, ambiguous multi-question turns.
+
 ## 4.1 Heuristic checklist (each returns pass/fail + evidence)
 
 1. **Diagnosis First**
@@ -509,67 +509,7 @@ Each seed will be outputted as a JSON file in the repo-ready folder `seeds/`.
 
 ---
 
-# 7. Test harness (pseudo-spec & runner)
-
-**Components:**
-
-* **Input:** Base prompt + Study Mode overlay (system message) + session JSON files (user turns).
-* **Runner:** Simulates multi-turn conversation using the real model (or a harnessed test model) and records assistant outputs.
-* **Evaluator:** Runs heuristic checks and optionally an LLM-judge for ambiguous cases. Produces per-session JSONL of metrics and human annotation slots.
-* **Reporter:** Aggregates results into CSV/HTML dashboards: per-session vector, Pedagogical Fidelity, Human Score, Flags, example dialogues.
-
-## 7.1 Minimal pseudocode (Pythonic)
-
-```python
-for session in sessions:
-    convo = seed_system_prompts(base_prompt, study_mode_overlay)
-    for turn in session['turns']:
-        if turn['role']=='user':
-            convo.append(user_message(turn['text']))
-            reply = model.generate(convo)         # actual model call
-            convo.append(assistant_message(reply))
-            record_turn(reply)
-    metrics = run_heuristics(recorded_turns)
-    save_jsonl(session_id, metrics, recorded_turns)
-```
-
-*(The actual implementation should include rate control, logging, and LLM-judge fallbacks for fuzzy checks.)*
-
----
-
-# 8. Scoring, reporting, and KPIs
-
-
-Per-session & batch metrics (examples):
-
-* % sessions asking initial diagnosis (personalization)
-* % sessions issuing a practice_round (skill practice rate)
-* % sessions with check_reinforce (retention proxy)
-* Average assistant turn token length (verbosity control)
-* Failure taxonomy counts (by category)
-
-Product KPIs:
-
-* Conversion to next lesson (cohort metric)
-* Completion rate for time-boxed drills
-* Avg # practice_rounds per session
-
-**Per session:**
-
-* Heuristic vector `[c1..c7]`, Pedagogical Fidelity (0..1), Safety flag, Human score (0..12), Violation flags, Example best/worst turn.
-
-**Batch metrics:**
-
-* Mean & std of fidelity by subject, by grade\_hint.
-* Failure taxonomy counts (how often each rule violated).
-* Engagement metrics: avg turns per session, median assistant turn length.
-* Business KPIs: % sessions with `check_and_reinforce` (retention proxy), % sessions with `practice_round` (skill practice), % sessions passing all checks.
-
-**Reporting formats:** JSONL exports for analysis + a simple HTML dashboard for non-technical stakeholders.
-
----
-
-# 9. Failure taxonomy (red-team & triage categories)
+# 7. Failure taxonomy (red-team & triage categories)
 
 * **Answered too early** — direct final answers in first assistant turn.
 * **Multi-question overload** — assistant asks multiple questions in one turn.
@@ -583,7 +523,7 @@ Each failure category should link to sample sessions for debugging and prompt re
 
 ---
 
-# 10. Stretch & adversarial cases (test set ideas)
+# 8. Stretch & adversarial cases (test set ideas)
 
 1. **Ambiguous grade hint** — user gives no level; overlay should default to 10th grade but adapt when user signals higher/lower.
 2. **Image of homework sheet** — agent should follow Study Mode: ask the student to describe their thoughts first; do not solve in first reply.
@@ -591,28 +531,13 @@ Each failure category should link to sample sessions for debugging and prompt re
 4. **Cross-domain transfer** — e.g., math concept applied in physics context; agent should scaffold the domain shift.
 5. **Intentional adversarial prompts** — “just give me the answer” repeated; agent must persist with Study Mode rules while respecting user autonomy.
 
----
-
-# 11. Implementation notes & best practices (engineering)
-
-* **Instrument every session**: log action tags, timestamps, and full raw text. Use structured schema for downstream analytics.
-* **Start with heuristics**: implement quick deterministic checks for fast feedback. Add an LLM-based judge for subtle cases (e.g., paraphrase detection).
-* **Human-in-the-loop calibration**: sample N sessions weekly for rubric scoring (N small—10–50) to tune heuristics and detect drift.
-* **Prompt/version management**: keep overlay text versioned (e.g., study\_mode\_v1.0) and store changes with eval results to measure A/B effects.
-* **Privacy & safety**: remove PII from logs before human review; apply safety filters before any external tool calls.
-* **Metrics dashboard**: expose both pedagogical fidelity and product KPIs (engagement, session completion) to stakeholders.
-
----
-
-# 12. Methods
-
 > *We operationalize Study Mode as a top-layer system instruction combined with a 7-action taxonomy. Sessions are represented as JSON trajectories; deterministic heuristics (regex + token metrics) evaluate pedagogical fidelity at scale. A lightweight human rubric (0–12) validates and calibrates the heuristics. The evaluation loop iteratively updates the study overlay and action thresholds based on failure taxonomy analysis. We report per-session and aggregated metrics to connect design changes to measurable tutoring behavior.*
 
 ---
 
-## 13. Eval-Driven System Design: From Prototype to Production
+## 9. Eval-Driven System Design Problem Definition
 
-### Problem Definition
+## Problem Definition
 
 For this guide, we assume we are starting with a workflow for delivering and evaluating **Study Mode**—a tutoring overlay for large language models that turns an LLM into an interactive, scaffolded tutor. While many components (LLMs, chat frontends, and basic QA) already exist, Study Mode introduces a narrow but high-value “pedagogical layer” whose correctness and fidelity to teaching practices must be measured. Like receipt processing, there is a “last mile” where imperfect automated behavior requires human time (teacher review, curriculum alignment, or safety triage).
 
@@ -633,32 +558,6 @@ Based on interviews with educators, curriculum designers, and product stakeholde
 5. **Personalization** — Did the assistant adapt to learner level/goals and leverage conversation memory correctly?
 6. **Safety & policy compliance** — No disallowed content or identity-safety problems; sensitive requests are handled correctly.
 7. **Opportunity for learning** — Did the session produce observable learning behaviors (learner attempts, restatements, successful practice rounds)?
-
-Our automation goal is for Study Mode to handle the majority of routine tutoring sessions without human intervention, but escalate for low-confidence, high-stakes, or policy-sensitive cases.  The primary optimization is **maximizing measurable learning outcomes** while **minimizing total human & compute cost**.
-
-We will therefore focus on reducing the total tutoring cost, which depends on:
-
-1. **Per-session compute cost** — how much it costs to run Study Mode (model size / #calls / tool use) per session.
-2. **Escalation rate to human QA** — the fraction of sessions or turns sent to teachers / reviewers for correction or safety review.
-3. **Human review cost per escalated item** — time and hourly cost of teachers, instructional designers, or moderators.
-4. **Cost of mistakes (learning risk)** — the downstream impact when the system gives incorrect or misleading instruction (relearning time, student frustration, reputational risk).
-5. **Engineering & integration cost** — cost to build, version, and maintain the Study Mode overlay, eval tooling, dashboards, and any dataset curation required.
-6. **Business impact of pedagogical failures / successes** — measurable product KPIs such as retention, lesson completion, conversion to paid tiers, NPS, or institutional adoption (schools, teachers).
-
-**Operational assumptions & constraints**
-
-* Study Mode is implemented initially as a system prompt overlay applied to an existing base LLM (not yet retrained into the model).
-* We can log full transcripts and instrument action tags (diagnose, micro\_explain, guide\_question, confirm\_then\_push, check\_reinforce, practice\_round, vary\_rhythm, recap\_summary).
-* There is a human-in-the-loop review pipeline available for escalations and for periodic rubric calibration.
-* Privacy/safety: learner PII must be redacted before human review; model outputs must adhere to content policy and curricular constraints.
-* Evaluation must be reproducible and auditable: every session produces a deterministic artifact (transcript + heuristic tags + heuristic evidence) for offline analysis.
-
-**Success criteria (example KPIs)**
-
-* **Pedagogical fidelity ≥ X%** (measured by automated heuristics + spot human rubric sampling).
-* **Escalation rate ≤ Y%** while maintaining **learning outcome delta ≥ Z** (e.g., students who use Study Mode show higher correct recall on quick checks).
-* **Per-session cost below budget** (compute + expected human review cost), or a favorable cost / outcome ratio versus baseline tutoring alternatives.
-* **Low incidence of critical mistakes** (safety/factual errors that would require intervention).
 
 **What we will measure and iterate on**
 
