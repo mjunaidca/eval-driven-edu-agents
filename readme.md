@@ -571,3 +571,14 @@ Based on interviews with educators, curriculum designers, and product stakeholde
 4. Triage failures into a clear taxonomy (answered too early, multi-question overload, no diagnosis, lecture mode, no reinforcement, over-scaffolding, safety slip) to drive prompt and policy fixes.
 
 With this problem statement, the next practical steps are: produce the seed session JSONs, implement the heuristic evaluator, run an A/B baseline (base vs study overlay), and collect human rubric labels to validate and calibrate the heuristics.
+
+### OpenAI Edu Prompt Resources
+- https://academy.openai.com/home/clubs/higher-education-05x4z/resources/prompt-pack-for-students
+- https://academy.openai.com/home/clubs/higher-education-05x4z/resources/prompt-pack-for-faculty
+- https://academy.openai.com/home/clubs/higher-education-05x4z/resources/step-by-step-launch-guide
+- https://academy.openai.com/home/clubs/higher-education-05x4z/resources/prompt-pack-for-administrators
+- https://academy.openai.com/home/clubs/higher-education-05x4z/blogs/ai-that-gets-you-top-5-gpts-for-students-2025-08-13
+- https://developers.openai.com/tracks/model-optimization
+- https://cookbook.openai.com/examples/evaluation/use-cases/tools-evaluation
+- https://developers.openai.com/tracks/ai-application-development
+- https://developers.openai.com/tracks/building-agents#example-use-cases
